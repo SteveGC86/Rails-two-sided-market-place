@@ -6,4 +6,10 @@ class User < ApplicationRecord
   # protect_from_forgery prepend:true
   # before_action :authenticate_user!
   has_one :profile
+
+  def create_profile
+    Profile.create!({
+      user_id: self.id
+    })
+  end
 end
