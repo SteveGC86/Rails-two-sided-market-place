@@ -21,9 +21,10 @@
         <td><%= item.shopping_list_id %></td>
         <td><%= item.name %></td>
         <td><%= link_to 'Edit', edit_shopping_list_item_path(item) %></td>
-        <td><%= link_to 'Destroy', shopping_list_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy item', shopping_list_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+        <td><%= link_to 'Destroy Shopping List', @shopping_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tbody>
 </table>
 

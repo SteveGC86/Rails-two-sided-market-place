@@ -14,7 +14,7 @@ class ShoppingListsController < ApplicationController
     @shopping_list_id = params[:id]
     @shopping_list = ShoppingList.find(params[:id])
     
-    @items = Item.where(shopping_list_id: current_user.shopping_list.id)
+    @items = Item.where(shopping_list_id: @shopping_list_id)
     @item = Item.new
   end
 

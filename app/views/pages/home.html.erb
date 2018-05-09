@@ -1,1 +1,6 @@
 <h1>Home</h1>
+
+<%= link_to 'Profile', profile_path(current_user.profile.id) %>
+<h2><%= link_to 'Create Shopping List', shopping_lists_path, method: :post %></h2>
+ <h2><%= link_to 'All Shopping Lists', shopping_lists_path %></h2>
+

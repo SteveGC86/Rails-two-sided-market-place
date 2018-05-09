@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
 
 <p>
   <strong>First name:</strong>
@@ -20,5 +16,6 @@
   <%= @profile.image_data %>
 </p>
 
+<%= link_to 'Home', home_path %> | 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+

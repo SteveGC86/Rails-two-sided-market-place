@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   root to: "shopping_lists#index"
 
+  get '/home', to: "pages#home"
+
 end
