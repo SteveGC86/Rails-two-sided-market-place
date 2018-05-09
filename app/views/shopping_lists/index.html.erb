@@ -29,6 +29,9 @@
 </table>
 
 <br>
-
-<%= link_to 'New Shopping List', shopping_lists_path, method: :post %>
+<% if current_user.shopping_list %>
+  <%= link_to 'Edit Your Shopping List', shopping_list_path(current_user.shopping_list.id) %>
+<% else %>
+  <%= link_to 'New Shopping List', shopping_lists_path, method: :post %>
+<% end %>
 

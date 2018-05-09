@@ -1,5 +1,6 @@
 class ShoppingListsController < ApplicationController
   before_action :set_shopping_list, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :index]
 
   # GET /shopping_lists
   # GET /shopping_lists.json
@@ -12,7 +13,8 @@ class ShoppingListsController < ApplicationController
   def show
     @shopping_list_id = params[:id]
     @shopping_list = ShoppingList.find(params[:id])
-    @items = Item.all 
+    
+    @items = Item.where(shopping_list_id: current_user.shopping_list.id)
     @item = Item.new
   end
 
@@ -35,7 +37,8 @@ class ShoppingListsController < ApplicationController
   def create
     @shopping_list = ShoppingList.new(shopping_list_params)
     @shopping_list.user = current_user
-  
+    user = current_user
+    user.shopping_list = @shopping_list
 
     respond_to do |format|
       if @shopping_list.save
