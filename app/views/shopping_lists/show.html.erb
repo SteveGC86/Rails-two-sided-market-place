@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @shopping_list.user %>
 </p>
 <h1>Items</h1>
 
+  <strong>List created by:</strong>
+  <%= @shopping_list.user.profile.first_name %>
 <table>
   <thead>
     <tr>
