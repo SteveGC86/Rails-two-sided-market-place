@@ -10,7 +10,16 @@ class ShoppingListsController < ApplicationController
   # GET /shopping_lists/1
   # GET /shopping_lists/1.json
   def show
+    @shopping_list_id = params[:id]
+    @shopping_list = ShoppingList.find(params[:id])
+    @items = Item.all 
+    @item = Item.new
   end
+
+  def add_to_list
+
+  end
+
 
   # GET /shopping_lists/new
   def new
@@ -25,6 +34,8 @@ class ShoppingListsController < ApplicationController
   # POST /shopping_lists.json
   def create
     @shopping_list = ShoppingList.new(shopping_list_params)
+    @shopping_list.user = current_user
+  
 
     respond_to do |format|
       if @shopping_list.save
@@ -69,6 +80,6 @@ class ShoppingListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shopping_list_params
-      params.require(:shopping_list).permit(:user_id, :item_limit, :delivered, :delivered_at)
+      params.permit(:user_id, :item_limit, :delivered, :delivered_at)
     end
 end
