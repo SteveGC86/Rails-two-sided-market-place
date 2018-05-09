@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shopping Lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Number of Items</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shopping_lists.each do |shopping_list| %>
+      <% if shopping_list.user.profile != nil %>
+        <tr>
+          <td><%= shopping_list.user.profile.first_name %></td>
+          <td><%= count_items(shopping_list.id) %></td>
+          <td><%= link_to 'Show list', shopping_list_path(shopping_list) %> </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user.shopping_list %>
+<%= link_to 'Profile', profile_path(current_user.profile.id) %> |
+  <%= link_to 'Edit Your Shopping List', shopping_list_path(current_user.shopping_list.id) %>
+<% else %>
+  <%= link_to 'New Shopping List', shopping_lists_path, method: :post %>
+<% end %>
+

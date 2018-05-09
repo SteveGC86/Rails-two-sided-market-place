@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+</p>
+<h1>Items</h1>
+
+  <strong>List created by:</strong>
+  <%= @shopping_list.user.profile.first_name %>
+<table>
+  <thead>
+    <tr>
+      <th>Shopping list</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.shopping_list_id %></td>
+        <td><%= item.name %></td>
+        <td><%= link_to 'Edit', edit_shopping_list_item_path(item) %></td>
+        <td><%= link_to 'Destroy item', shopping_list_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+        <td><%= link_to 'Destroy Shopping List', @shopping_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tbody>
+</table>
+
+<br>
+
+<%= form_with model: [@shopping_list, @item], url: shopping_list_items_path(@shopping_list.id), local: true, method: :post do |form| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <%= form.hidden_field :shopping_list_id, value: @shopping_list.id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_shopping_list_path(@shopping_list) %> |
+<%= link_to 'Back', shopping_lists_path %>
