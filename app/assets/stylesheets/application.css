@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Satisfy');
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Satisfy');
+
+ *{
+  font-family: "Open Sans Condensed" ;
+  
+}
+
+body {
+  background-image: url('/app/assets/images/cabbage.jpeg');
+  background-color: #1A2A35;
+  color: white;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: "Satisfy";
+  src: url('https://fonts.googleapis.com/css?family=Satisfy') format("truetype");
+  font-size: 90px;
+  font-weight: normal;
+  color: #FDFFFF;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: normal;
+  color: #FDFFFF;
+}
+
+h3 {
+  color: #5A003A;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-color: #FDFFFF;
+  opacity: 0.5;
+}
+
+.button {
+  color: #5A003A;
+  background-color: #FDFFFF;
+  border-radius: 5px;
+}

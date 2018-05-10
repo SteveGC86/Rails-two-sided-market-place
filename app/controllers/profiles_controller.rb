@@ -63,6 +63,30 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def charge
+    if current_user.stripe_id.blank?
+      customer = Stripe::Customer.create(
+        email: params[:stripeEmail],
+        source: params[:stripeToken]
+    )
+      current_user.stripe_id = customer.id
+      current_user.save!
+    end
+
+    charge = Stripe::Charge.create(
+      customer: current_user.stripe_id,
+      amount: 500,
+      currency: 'AUD'
+    )
+
+    flash[:notice] = 'Payment made!'
+    redirect_back fallback_location: profile_path
+
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_back fallback_location: profile_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Shopping Lists</h1>
+<h1>Trundler</h1>
+<h2>Shopping Lists</h2>
 
 <table>
   <thead>
@@ -17,7 +18,7 @@
         <tr>
           <td><%= shopping_list.user.profile.first_name %></td>
           <td><%= count_items(shopping_list.id) %></td>
-          <td><%= link_to 'Show list', shopping_list_path(shopping_list) %> </td>
+          <td><h3><%= link_to 'Show list', shopping_list_path(shopping_list) %> </h3></td>
         </tr>
       <% end %>
     <% end %>

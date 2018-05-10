@@ -36,9 +36,9 @@ class ShoppingListsController < ApplicationController
   # POST /shopping_lists
   # POST /shopping_lists.json
   def create
-    authorize @shopping_list
     @shopping_list = ShoppingList.new(shopping_list_params)
     @shopping_list.user = current_user
+    authorize @shopping_list
     user = current_user
     user.shopping_list = @shopping_list
 

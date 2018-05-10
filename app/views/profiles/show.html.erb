@@ -13,8 +13,18 @@
 
 <p>
   <strong>Image data:</strong> <br>
-  <%= image_tag @profile.image_url, version_size: :thumb %>
+  <% if @profile.image_data.present? %>
+  <%= image_tag @profile.image_url(:medium) unless @profile.image_data.nil? %>
+  <% end %>
 </p>
+
+<% if user_signed_in? %>
+  <%= render 'charge_form', profile: @profile, user: current_user %>
+  <% else %>
+    <%= link_to new_user_registration_path, class: 'stripe-button-el' do %>
+    <span style="display: block; min-height: 30px;">Pay with Card</span>
+  <% end %>
+<% end %>
 
 <%= link_to 'Home', home_path %> | 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |

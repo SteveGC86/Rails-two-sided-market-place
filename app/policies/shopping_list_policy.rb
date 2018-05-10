@@ -1,6 +1,6 @@
 class ShoppingListPolicy < ApplicationPolicy
   def create?
-    @user == record.user
+    true if @user == record.user
   end
 
   def show?
@@ -15,7 +15,7 @@ class ShoppingListPolicy < ApplicationPolicy
   end
 
   def update?
-    @user == record.user
+    true if @user == record.user
   end
 
   def new?

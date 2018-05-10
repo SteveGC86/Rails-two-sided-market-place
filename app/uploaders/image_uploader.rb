@@ -1,6 +1,7 @@
-require "image_processing/mini_magick"
-
 class ImageUploader < Shrine
+
+  include ImageProcessing::MiniMagick
+
     plugin :processing
     plugin :versions, names: [:original, :thumb, :medium]
     plugin :delete_raw # delete processed files after uploading

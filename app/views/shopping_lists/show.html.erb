@@ -8,11 +8,12 @@
   <%= @shopping_list.user.profile.first_name %>
 <table>
   <thead>
+  <h1>Trundler</h1>
     <tr>
-      <th>Shopping list</th>
-      <th>Name</th>
-      <th>ITEM ID</th>
-      <th colspan="3"></th>
+      <h2><th>Shopping list</th></h2>
+      <h3><th>Name</th></h3>
+      <h3><th>ITEM ID</th></h3>
+      <h3><th colspan="3"></th></h3>
     </tr>
   </thead>
 
@@ -57,10 +58,9 @@
 
   <%= form.hidden_field :shopping_list_id, value: @shopping_list.id %>
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit :class => 'button'%>
     </div>
   <% end %>
 <% end %>
 
-<%= link_to 'Edit', edit_shopping_list_path(@shopping_list) %> |
-<%= link_to 'Back', shopping_lists_path %>
+<%= link_to 'Back', shopping_lists_path, class: 'button' %>
