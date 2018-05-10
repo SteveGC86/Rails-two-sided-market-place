@@ -6,6 +6,7 @@ ruby '2.4.1'
 gem 'devise'
 gem "shrine", "~> 2.0"
 gem 'image_processing', '~> 1.2'
+gem "pundit"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

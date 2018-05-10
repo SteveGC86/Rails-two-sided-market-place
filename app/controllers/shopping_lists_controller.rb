@@ -1,6 +1,7 @@
 class ShoppingListsController < ApplicationController
   before_action :set_shopping_list, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show, :index]
+  after_action :verify_authorized, only: [:update, :destroy]
 
   # GET /shopping_lists
   # GET /shopping_lists.json
@@ -35,6 +36,7 @@ class ShoppingListsController < ApplicationController
   # POST /shopping_lists
   # POST /shopping_lists.json
   def create
+    authorize @shopping_list
     @shopping_list = ShoppingList.new(shopping_list_params)
     @shopping_list.user = current_user
     user = current_user
@@ -54,6 +56,7 @@ class ShoppingListsController < ApplicationController
   # PATCH/PUT /shopping_lists/1
   # PATCH/PUT /shopping_lists/1.json
   def update
+    authorize @shopping_list
     respond_to do |format|
       if @shopping_list.update(shopping_list_params)
         format.html { redirect_to @shopping_list, notice: 'Shopping list was successfully updated.' }
@@ -68,6 +71,7 @@ class ShoppingListsController < ApplicationController
   # DELETE /shopping_lists/1
   # DELETE /shopping_lists/1.json
   def destroy
+    authorize @shopping_list
     @shopping_list.destroy
     respond_to do |format|
       format.html { redirect_to shopping_lists_url, notice: 'Shopping list was successfully destroyed.' }
