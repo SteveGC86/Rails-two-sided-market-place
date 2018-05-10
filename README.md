@@ -9,6 +9,8 @@ Numerous people are not able to leave the house or people are too busy with thei
 ### The Solution
 Trundler is a platform that allows an individual to advertise their weekly grocery list and pay someone else to purchase and drop off the required groceries. Trundler connects people who need groceries with people who need work. Trundler has a chat feature that allows the shopper to contact the user if a given item is not available and allows the user to choose an alternative. The chat feature also allows the user to contact the shopper and adjust the drop off address and time.
 
+Trundler will utilise google maps and the gem Geocoder to ensure that the only jobs advertised are the jobs within a certain radius of where they live. A user is able to increase the distance of jobs they're willing to accept as well.
+
 ### Design Process
 
 Initially I wanted an app that was green and resembled a market place with simple layout that was easy for people to navigate.
@@ -48,12 +50,7 @@ The User stories were fairly straight forward as I believe that a large number o
 
 ![Db](/app/assets/images/Trello.png)
 
-
-
 <br>
-
-
-
 
 
 #### Work Flow Diagrams
@@ -89,10 +86,10 @@ The first workflow diagram shows the normal process a user would undergo to sign
 - Initial design (erd, figma/wireframes and wokrflow diagrams) completed by Wednesday
 
 ### Challenges
-#### Devise
+#### Shrine
 Friday May the fourth will be a day that I will long remember. Many times whilst learning to code I have hit hurdles but this one made me question what I was even doing here.
 
-It all began with 'Shrine'. I was undable to get the users profile image to display, regardless of what syntax I tried it did not work. It took numerous hours of trying and ended up with my Users and Users-profile tables no longer recognising each other.
+It all began with 'Shrine'. I was unable to get the users profile image to display, regardless of what syntax I tried it did not work. It took numerous hours of trying and ended up with my Users and Users-profile tables no longer recognising each other.
 
 I ended up restarting the project rm -rf Trundler. Unfortunately that meant that my near finished README died with it. Long story short, I learnt that I had not read through the tutorial properly and that I had left a line of code out of my profile model ":Attachment.new(:image)" that stores the image in a way that can be later recognised by the model. Lession one, take your time and read everything
 
@@ -101,14 +98,40 @@ I had not completed all that much, three static pages and two database tables, s
 
 It turns out that perhaps I am unable to push to Heroku from my home network, because as soon as I tried when I arrived at the Academy Monday morning it worked.
 
-Come Thursday and Version 2.5 of Trundler, 
+Come Thursday and Version 2.5 of Trundler, things are finally moving along. New DB tables added and the app has finally been pushed to Heroku.
+
+<br>
+
+### What was missed and would I like to improve on.
+I cannot lie with the dissapointment in not being able to deliver on this project, having lost two days to silly problems was an eye opener and has taught me alot about how I will try to handle things in the future. I need to reach out more and improve my communication skills to effectivly communicate what I'm having trouble with. The two days was spent on a part of the app that was not essential and could have been spent else where.
+
+There are a lot I would change on how I approached this assignment, I would double check with seniors with the order of in which tables should be produced and what should be included. I wasted alot of times because I didn't do things in the right order and getting too much done before showing a teacher the direction that I was heading. I would ensure that I completely read through a tutorial (if using one) before implementing it. The initial mistake, was purely because I missed three words.
+
+When getting help, restrict it to one person helping and make sure the person knows how to assist with your unnderstanding of completing the task. Also, keep record of the changes you make, so when you get help you are restristing the amount of documentation you're looking at. And possibly changing.
+
+I am dissapointed in running out of time, and not being able to put more time into putting the gems I wanted into my application. As already stated too much time was wasted on Shrine, when in reality more time should have been spent in implementing Stripe and putting in the area I wanted. Initially Stripe would have been used to allow user to user payment for performing the grocery tasks, instead due to running out of time Stripe was only used as a "subscription" payment for using the app. 
+
+For future projects I was to ensure that I assign myself specific tasks and ensure that I only move onto the next once the task I'm currently working on. I found myself jumping around between tasks rather than focusing on one.
+
+The final look of my app is not complete and bothers me to present to the class without the css done at least. I should have allocated time every night to get some css done.
+
+![Final Product](/app/assets/images/final-product.png)
+
 <br>
 
 ### Code Reviews
 Due to the monstrosity of this assignment I had spent a lot of time perusing through other peoples code and having others look/ scrutenise through mine. 
+- Teachers obviously
 - Glenn
 - Lindsey
 - Drew
 - Aj
 - Richard
 - Maxi
+
+### What went well
+My utilization of Git was probably the best I have done so far in the duration of this bootcamp. I was succesfully able to push, add, commit and even rollback at one stage of the project. Being able to review my git logs to remind myself where I'm at and what to do next.
+
+My knowledge of how Shrine, Devise and Stripe are alot better than prior to the commencement of this project.
+
+
