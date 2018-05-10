@@ -1,7 +1,7 @@
 # Trundler
 ## Two sided market place Rails app
 
-### [Heroku Link](https://ancient-citadel-81275.herokuapp.com/)(does not currently work)
+### [Heroku Link](https://polar-harbor-19646.herokuapp.com/users/sign_in)
 
 ### The Problem
 Numerous people are not able to leave the house or people are too busy with their everyday lives to spend hours shopping for the weeks groceries. Also there are people who are looking for extra cash with a small job. Trundler gives people that option.
@@ -14,29 +14,69 @@ Trundler is a platform that allows an individual to advertise their weekly groce
 Initially I wanted an app that was green and resembled a market place with simple layout that was easy for people to navigate.
 Unfortunately my artsy eye was overly artsy and the design was too complicated.
 
-![initial Figma](/app/assets/images/readme/Figma-init.png)
+#### Fonts
+Initially I had my heart set on Open Sans Condenced for the majority of my text and Pacifico for my logo font.
+![Font 1](/app/assets/images/Opens-Sans-Condenced.png)
+![Font 2](/app/assets/images/pacifico.png)
+
+#### Design one.
+With design number two I was determined to keep the font from the initial design for the heading and to try a different colour pallette. 
+![initial Figma](/app/assets/images/Figma-two.png)
+#### Colour scheme.
+![initial Figma](/app/assets/images/initial-colours.png)
+
+
+#### Design two.
+![Second Figma design](/app/assets/images/Figma-init.png)
+
+So after not being happy with design two and consulting my design team (thankyou Gretch) it turns out that it did't work, again too busy and it made it difficult to read the text in front.
+
+#### Final Design
+For the final design I went for a much simpler based around an image found on unsplash. The design would use the fonts Open Sans Condensed and Satisfy and colours from the unsplash
+
+![Second Figma design](/app/assets/images/final-figma.png)
+![Second Figma design](/app/assets/images/final-figma2.png)
+![Full Figma](/app/assets/images/Figma-total.png)
+#### Final font and colour scheme
+![initial Figma](/app/assets/images/Satisfy.png)
+![initial Figma](/app/assets/images/final-colour.png)
+
+<br>
 
 ### User stories
-![Db](/app/assets/images/readme/Trello.png)
 The User stories were fairly straight forward as I believe that a large number of the situations would be covered by the apps features. To possibly highlight some problems I created a couple of User workflow diagrams to show any possible problems that could arise.
+
+![Db](/app/assets/images/Trello.png)
+
+
+
 <br>
+
+
+
+
+
 #### Work Flow Diagrams
-The first workflow diagram shows the normal path throught
-![User workflow](/app/assets/images/readme/User-workflow.png)
+The first workflow diagram shows the normal process a user would undergo to sign up/login create a grocery list, have a shopper (name for the user who purchases and delivers the grocery list) purchase and deliver required items.
 
+![User workflow](/app/assets/images/User-workflow.png)
 
-![App Workflow](/app/assets/images/readme/App-workflow.png)
+#### App features
+ - A simple list system for a user to use in order to create a shopping list and advertise on a feed.
+ - An readable feed for a shopper to pick out shopping lists in their local area.
+ - A payment system that makes it easy for the shopper and user to exchange money for services.
+ - A contact us page that would allow users to contact myself regarding issues that may arise.
+ - An in app messaging system that allows the shopper to contact the user if an item is not available (preventing the exchanging of phone numbers)
+ - A map system that would be able to show the shopper the prefered stores for the grocery list and for the delivery address.
+ - An authentication system that would to allow a user to log in and have a secure account.
+- An authourisation system that would prevent one user from modifying another users shopping list.
 
-#### Figma
-![Full Figma](/app/assets/images/readme/Figma-total.png)
+![App Workflow](/app/assets/images/App-workflow.png)
 
 
 
 #### DB Design
-![Database](/apps/assets/images/readme/Database.png)
-
-### Code Reviews
-
+![Database](/app/assets/images/Database.png)
 
 ### Gems
 - Devise
@@ -44,6 +84,9 @@ The first workflow diagram shows the normal path throught
 - Rspec
 - Stripe
 - dotenv
+
+### Project plan
+- Initial design (erd, figma/wireframes and wokrflow diagrams) completed by Wednesday
 
 ### Challenges
 #### Devise
@@ -59,5 +102,9 @@ I had not completed all that much, three static pages and two database tables, s
 It turns out that perhaps I am unable to push to Heroku from my home network, because as soon as I tried when I arrived at the Academy Monday morning it worked.
 
 Come Thursday and Version 2.5 of Trundler, 
+<br>
 
-####
+### Code Reviews
+Due to the monstrosity of this assignment I had spent a lot of time perusing through other peoples code and having others look/ scrutenise through mine. 
+-Glenn
+-
