@@ -12,8 +12,8 @@
 </p>
 
 <p>
-  <strong>Image data:</strong>
-  <%= image_tag @profile.image_url %>
+  <strong>Image data:</strong> <br>
+  <%= image_tag @profile.image_url, version_size: :thumb %>
 </p>
 
 <%= link_to 'Home', home_path %> | 
