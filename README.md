@@ -28,4 +28,27 @@ The first workflow diagram shows the normal path throught
 ![Full Figma](/app/assets/images/readme/Figma-total.png)
 
 
-* ...
+
+#### DB Design
+![Database](/apps/assets/images/readme/Database.png)
+
+### Code Reviews
+
+
+### Gems
+- Devise
+- Pundit
+- Rspec
+- Mailgun
+- dotenv
+- Geocoding
+
+### Challenges
+#### Devise
+Friday May the fourth will be a day that I will long remember. Many time whilst learning to code I have hit hurdles but this one made me question what I was even doing here.
+
+It all began with 'Devise'. I was undable to get the users profile imafe to display, regardless of what syntax I tried it did not work. It took numerous hours of trying and ended up with my Users and Users-profile tables no longer recognising each other.
+
+I ended up restarting the project rm -rf Trundler. Unfortunately that meant that my near finished README died with it. Long story short, I learnt that I had not read through the tutorial properly and that I had left a line of code out of my profile model ":Attachment.new(:image)" that stores the image in a way that can be later recognised by the model.
+#### Heroku
+I had not completed all that much, three static pages and two tables, surely Heroku would be able to handle that first push. HA. To my demise it hasn't worked and I have spent the past three hours attempting to solve it. Devise.secret_key was not set, so I set it. Same error. Precompilling failed, i rails assets:procompile. Same error. I have assumed the fetal position and don't plan on leaving until I'm fed beer and donuts. 3 hours later I'm still awaiting said donuts.
