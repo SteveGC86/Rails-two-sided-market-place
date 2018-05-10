@@ -2,7 +2,7 @@
 
 <h1>Trundler</h1>
 <h2>Shopping Lists</h2>
-
+<div class="profile">
 <table>
   <thead>
     <tr>
@@ -18,7 +18,7 @@
         <tr>
           <td><%= shopping_list.user.profile.first_name %></td>
           <td><%= count_items(shopping_list.id) %></td>
-          <td><h3><%= link_to 'Show list', shopping_list_path(shopping_list) %> </h3></td>
+          <td><h3><%= link_to 'Show list', shopping_list_path(shopping_list), class: 'button' %> </h3></td>
         </tr>
       <% end %>
     <% end %>
@@ -27,9 +27,11 @@
 
 <br>
 <% if current_user.shopping_list %>
-<%= link_to 'Profile', profile_path(current_user.profile.id) %> |
-  <%= link_to 'Edit Your Shopping List', shopping_list_path(current_user.shopping_list.id) %>
+<%= link_to 'Profile', profile_path(current_user.profile.id), class: 'button' %> 
+<br>
+  <%= link_to 'Edit Your Shopping List', shopping_list_path(current_user.shopping_list.id), class: 'button' %>
 <% else %>
-  <%= link_to 'New Shopping List', shopping_lists_path, method: :post %>
+  <%= link_to 'New Shopping List', shopping_lists_path, method: :post, class: 'button', class: 'button' %>
 <% end %>
+</div>
 

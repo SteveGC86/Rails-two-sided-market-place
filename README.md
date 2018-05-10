@@ -106,5 +106,9 @@ Come Thursday and Version 2.5 of Trundler,
 
 ### Code Reviews
 Due to the monstrosity of this assignment I had spent a lot of time perusing through other peoples code and having others look/ scrutenise through mine. 
--Glenn
--
+- Glenn
+- Lindsey
+- Drew
+- Aj
+- Richard
+- Maxi

@@ -1,6 +1,11 @@
-<h1>Home</h1>
 
-<%= link_to 'Profile', profile_path(current_user.profile.id) %>
+<h1>Trundler</h1>
+<h2>Home</h2>
+<div class ="profile">
+<div class ="group">   
+<%= link_to 'Profile', profile_path(current_user.profile.id), class: 'button' %>
+<br>
+ <%= link_to 'All Shopping Lists', shopping_lists_path, class: 'button'%>
+ </div>
 
- <h2><%= link_to 'All Shopping Lists', shopping_lists_path %></h2>
 

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-
+<h1>Trundler</h1>
+<div class ="profile">
 <p>
   <strong>First name:</strong>
   <%= @profile.first_name %>
@@ -12,7 +12,7 @@
 </p>
 
 <p>
-  <strong>Image data:</strong> <br>
+  <strong>Profile picture:</strong> <br>
   <% if @profile.image_data.present? %>
   <%= image_tag @profile.image_url(:medium) unless @profile.image_data.nil? %>
   <% end %>
@@ -25,7 +25,11 @@
     <span style="display: block; min-height: 30px;">Pay with Card</span>
   <% end %>
 <% end %>
-
-<%= link_to 'Home', home_path %> | 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<% if current_user.stripe_id %>
+<%= link_to 'Home', home_path, class: 'button'%> 
+<% else%>
+<% end %>
+<br>
+<%= link_to 'Edit', edit_profile_path(@profile), class: 'button'%> 
+</div>
 
